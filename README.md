@@ -25,10 +25,12 @@ git commit -m "first commit"
 git branch -M main
 
 ### GitHub 
-git remote add origin https://github.com/emiliod90/flask_dash_app.git
-git remote set-url --add --push origin https://github.com/emiliod90/flask_dash_app.git
+git remote add origin https://github.com/emiliod90/fastapi_plotly.git
+git remote set-url --add --push origin https://github.com/emiliod90/fastapi_plotly.git
 ### Azure Repos
-git remote set-url --add --push origin https://emydesouza@dev.azure.com/emydesouza/Flask%20Dash%20App/_git/Flask%20Dash%20App
+git remote set-url --add --push origin https://emydesouza@dev.azure.com/emydesouza/FastAPI%20Plotly%20App/_git/FastAPI%20Plotly%20App
+
+git push -u origin --all
 
 
 git push -u origin main
