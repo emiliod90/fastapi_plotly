@@ -4,7 +4,13 @@ FastAPI built similar to the Factory Pattern
 Folder structure:
 
 
+Folder for each CRUD action
+
 Inspired by https://github.com/rednafi/fastapi-nano/tree/master/%7B%7Bcookiecutter.repo%7D%7D/app 
+And 
+https://github.com/Buuntu/fastapi-react/tree/master/%7B%7Bcookiecutter.project_slug%7D%7D
+And 
+https://github.com/tiangolo/full-stack-fastapi-postgresql/tree/master/%7B%7Bcookiecutter.project_slug%7D%7D
 
 startup.sh starts the deployment using gunicorn and uvicorn
 see here for more: https://www.uvicorn.org/deployment/#gunicorn
