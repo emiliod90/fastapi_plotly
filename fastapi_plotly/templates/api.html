@@ -1,10 +1,40 @@
-<html>
-<head>
-    <title>Home</title>
-    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
-</head>
-<body>
-    <h1>This is the api home route</h1>
-    <h2>To see the api docs got to here ...</h2>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}
+{% if title %}
+<title>{{title}}</title>
+{% else %}
+<title>Emilio</title>
+{% endif %}
+{% endblock %}
+{% block content %}
+<nav class="nav">
+    <div class="nav__container">
+        <div class="hamburger">
+            <img src="{{ url_for('static', path='/icons/menu_sharp.svg') }}" width="20" alt="menu">
+        </div>
+        <div class="brand">
+            <a href="{{ url_for('index') }}">🚀 <span>Analysts Journal</span></a>
+        </div>
+        <div class="nav_links">
+            <ul>
+                <li><a href="{{ url_for('index') }}">Vault</a></li>
+                <li><a href="{{ url_for('index') }}">Projects</a></li>
+                <li><a href="{{ url_for('index') }}">Tutorials</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<main class="content">
+    <header>
+        <div class="banner">
+            <div class="welcome_text">
+                <p>Access the swagger docs or read project documentation</p>
+            </div>
+            <div class="dashboard_btn">
+                <a class="green_btn" href="{{ url_for('custom_swagger_ui_html') }}">OpenAPI Docs</a>
+                <a class="blue_btn" href="{{ url_for('index') }}">Read the Doc's</a>
+            </div>
+        </div>
+    </header>
+</main>
+{% endblock %}

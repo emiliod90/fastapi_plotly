@@ -1,10 +1,47 @@
-<html>
-<head>
-    <title>Home</title>
-    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
-</head>
-<body>
-    <h1>Hello World</h1>
-    <h2>Hello Emilio</h2>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}
+{% if title %}
+<title>{{title}}</title>
+{% else %}
+<title>Emilio</title>
+{% endif %}
+{% endblock %}
+{% block content %}
+<nav class="nav">
+    <div class="nav__container">
+        <div class="hamburger">
+            <img src="{{ url_for('static', path='/icons/menu_sharp.svg') }}" width="20" alt="menu">
+        </div>
+        <div class="brand">
+            <a href="{{ url_for('index') }}">🚀 <span>Analysts Journal</span></a>
+        </div>
+        <div class="nav_links">
+            <ul>
+                <li><a href="{{ url_for('index') }}">Vault</a></li>
+                <li><a href="{{ url_for('index') }}">Projects</a></li>
+                <li><a href="{{ url_for('index') }}">Tutorials</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<main class="content">
+    <header>
+        <div class="banner">
+            <!--<img src="../../logo.svg" alt="my logo">-->
+            <div class=avatar_container>
+                <div class="banner_avatar">
+                    <img src="{{ url_for('static', path='/images/welcomeClip.png') }}" alt="welcome">
+                </div>
+            </div>
+            <div class="welcome_text">
+                <h1>Project Home</h1>
+                <p>A FastAPI, Plotly + Jinja2 application deployed on Azure</p>
+            </div>
+            <div class="dashboard_btn">
+                <a class="red_btn" href="{{ url_for('index') }}">Open Dashboard</a>
+                <a class="blue_btn" href="{{ url_for('index') }}">Read the Doc's</a>
+            </div>
+        </div>
+    </header>
+</main>
+{% endblock %}

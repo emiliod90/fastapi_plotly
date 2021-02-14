@@ -4,6 +4,17 @@ FastAPI built similar to the Factory Pattern
 Folder structure:
 
 
+
+## Jinja2
+
+I used a base.html using this tutorial
+https://tedboy.github.io/jinja2/templ9.html
+
+
+### api docs
+customised route to include api docs
+https://fastapi.tiangolo.com/advanced/extending-openapi/#the-normal-process
+
 Folder for each CRUD action
 
 Inspired by https://github.com/rednafi/fastapi-nano/tree/master/%7B%7Bcookiecutter.repo%7D%7D/app 
@@ -49,9 +60,9 @@ git push -u origin main
 For azure make sure requirements.txt is in the project root and "startup.sh" is referenced as a Startup Command under Stack Settings in Azure Portal. See here for more: https://docs.microsoft.com/en-us/azure/app-service/configure-language-python 
 
 In development I am using poetry
-poetry run uvicorn asgi:app --host 0.0.0.0 --port 3000 --reload
+poetry run uvicorn fastapi_plotly.main:app --host 0.0.0.0 --port 3000 --reload
 Or
-poetry run gunicorn --bind=0.0.0.0 --timeout 600 asgi:app -w 2 -k uvicorn.workers.UvicornWorker
+poetry run gunicorn --bind=0.0.0.0 --timeout 600 fastapi_plotly.main:app -w 1 -k uvicorn.workers.UvicornWorker
 
 In production Azure uses the startup.sh which runs gunicorn directly with 
 gunicorn --bind=0.0.0.0 --timeout 600 asgi:app -w 2 -k uvicorn.workers.UvicornWorker

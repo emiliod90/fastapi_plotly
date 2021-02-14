@@ -8,5 +8,5 @@ templates = Jinja2Templates(directory="fastapi_plotly/templates")
 
 
 @router.get("/", response_class=HTMLResponse)
-async def root(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+async def index(request: Request, title="Hello"):
+    return templates.TemplateResponse("index.html", {"request": request, "title": title})
