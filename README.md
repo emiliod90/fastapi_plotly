@@ -3,7 +3,7 @@ FastAPI built similar to the Factory Pattern
 
 Folder structure:
 
-
+sudo apt install libpython3.8-dev
 
 ## Jinja2
 

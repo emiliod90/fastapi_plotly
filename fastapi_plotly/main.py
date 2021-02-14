@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.openapi.utils import get_openapi
 from .views import index, api
+from .api.finnhub import ohlcv 
 from fastapi.staticfiles import StaticFiles
 from fastapi.openapi.docs import (
     get_swagger_ui_html,
@@ -11,6 +12,7 @@ app = FastAPI(title="Emilio FastAPI Demo")
 app.mount("/static", StaticFiles(directory="fastapi_plotly/static"), name="static")
 app.include_router(index.router)
 app.include_router(api.router)
+app.include_router(ohlcv.router)
 
 
 def custom_openapi():
