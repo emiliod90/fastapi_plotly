@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.openapi.utils import get_openapi
 from .views import index, api
-from .api.finnhub import ohlcv 
+from .api.finnhub import ohlcv
 from fastapi.staticfiles import StaticFiles
 from fastapi.openapi.docs import (
     get_swagger_ui_html,
@@ -9,7 +9,7 @@ from fastapi.openapi.docs import (
 )
 
 app = FastAPI(title="Emilio FastAPI Demo")
-app.mount("/static", StaticFiles(directory="fastapi_plotly/static"), name="static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 app.include_router(index.router)
 app.include_router(api.router)
 app.include_router(ohlcv.router)
@@ -46,4 +46,3 @@ async def custom_swagger_ui_html():
         title=app.title + " - Swagger UI",
         oauth2_redirect_url=app.swagger_ui_oauth2_redirect_url
     )
-
