@@ -25,23 +25,10 @@
     </div>
 </nav>
 <main class="content">
-    <header>
-        <div class="banner">
-            <!--<img src="../../logo.svg" alt="my logo">-->
-            <div class=avatar_container>
-                <div class="banner_avatar">
-                    <img src="{{ url_for('static', path='/images/welcomeClip.png') }}" alt="welcome">
-                </div>
-            </div>
-            <div class="welcome_text">
-                <h1>Project Home</h1>
-                <p>A FastAPI, Plotly + Jinja2 application deployed on Azure</p>
-            </div>
-            <div class="dashboard_btn">
-                <a class="red_btn" href="{{ url_for('ohlcv') }}">Open Dashboard</a>
-                <a class="blue_btn" href="https://github.com/emiliod90/fastapi_plotly">Read the Doc's</a>
-            </div>
-        </div>
-    </header>
+    {% autoescape off %}
+    {{ fig_div_price }}
+    {{ fig_div_volume }}
+    {{ fig_div_pv }}
+    {% endautoescape %}
 </main>
 {% endblock %}

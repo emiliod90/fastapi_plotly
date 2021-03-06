@@ -10,12 +10,22 @@ sudo apt install libpython3.8-dev
 I used a base.html using this tutorial
 https://tedboy.github.io/jinja2/templ9.html
 
+### plotly
+https://plotly.com/python/hover-text-and-formatting/ 
+https://plotly.com/python/multiple-axes/
+https://stackoverflow.com/questions/55468976/how-do-i-add-vertical-moving-hover-line-to-my-plotly-chart 
+https://coronavirus.data.gov.uk/details/vaccinations 
 
 ### api docs
 customised route to include api docs
 https://fastapi.tiangolo.com/advanced/extending-openapi/#the-normal-process
 
 Folder for each CRUD action
+
+
+# Inspiration
+
+https://tylernwolf.com/about
 
 Inspired by https://github.com/rednafi/fastapi-nano/tree/master/%7B%7Bcookiecutter.repo%7D%7D/app 
 And 

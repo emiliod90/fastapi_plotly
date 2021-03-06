@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.openapi.utils import get_openapi
-from .views import index, api
-from .api.finnhub import ohlcv
+from .views import index, api, ohlcv
+from .api.finnhub import candle, earnings
 from fastapi.staticfiles import StaticFiles
 from fastapi.openapi.docs import (
     get_swagger_ui_html,
@@ -13,6 +13,8 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 app.include_router(index.router)
 app.include_router(api.router)
 app.include_router(ohlcv.router)
+app.include_router(candle.router)
+app.include_router(earnings.router)
 
 
 def custom_openapi():
